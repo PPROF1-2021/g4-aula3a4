@@ -1,0 +1,58 @@
+@charset "utf-8";
+
+body{
+	background-color: #1ed8ad;
+	background: linear-gradient(to right, #03f5b9, #3888e9);	
+}
+#btn-login{
+	background-color: #06c399;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+#btn-login:hover{
+	background-color: #079374;
+}
+
+.bg{
+	background-image: url(../img/f1.jpeg);
+}
+
+.textologin{
+	text-align: center;
+}
+
+footer{
+  color: white;
+  bottom: 0;
+  width: 100%;
+  font-size: 1.1em;
+ 
+}
+
+footer h4{
+	font-weight: bolder;
+}
+
+footer a{
+	font-size: 1.1em;
+	color: white;
+	text-decoration: none;
+}
+
+footer a:hover{
+	color: green;
+}
+
+.redessociales a{
+	font-size: 2em;
+}
+.botoninicio{
+	font-size: 2em;
+	font-weight: bolder;
+	box-shadow: 5px 2px 2px black;
+}
+
+.botoninicio:hover{
+	box-shadow: none;
+}
