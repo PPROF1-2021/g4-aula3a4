@@ -56,3 +56,7 @@ footer a:hover{
 .botoninicio:hover{
 	box-shadow: none;
 }
+
+.navbar{
+	font-family: 'Montserrat', sans-serif;
+}
