@@ -53,7 +53,7 @@
         <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Login</li>
+              <li class="breadcrumb-item active" aria-current="page">Formulario de contacto</li>
             </ol>
          </nav> 
     </div>
@@ -62,33 +62,36 @@
 
     <!--Formulario de inicio de sesion-->
     <section>
-        <div class="container w-75 bg-primary mt-5 rounded shadow">
+        <div class="container w-75 bg-trasparent mt-5 mb-5 rounded">
             <div class="row aling-items-stretch">
-                <div class="col bg d-none d-lg-block col-md-5 col-lg-5 col-xl-6 rounded">
-                    
-                </div>
-                <div class="col bg-white p-5 rounded-end">
-                    <h2 class="fw-bold text-center py-5">Iniciar Sesion</h2>
+                <div class="col d-none d-lg-block col-lg-2 col-md-1 "></div>
+                <div class="col bg-white p-5 rounded col-lg-8 col-xs-12 shadow">
 
-                    <form action="#">   
+                    <h2 class="fw-bold text-center py-5">Contactate con nosotros</h2>
+
+                    <form action="#">  
                         <div class="mb-4">
-                            <label for="email" class="form-label"> Direccion de email</label>
+                            <label for="nombre" class="form-label"> Nombre</label>
+                            <input type="text" class="form-control" name="email">
+                        </div> 
+                        <div class="mb-4">
+                            <label for="nombre" class="form-label"> Apellido</label>
+                            <input type="text" class="form-control" name="email">
+                        </div> 
+                        <div class="mb-4">
+                            <label for="email" class="form-label"> Dirección de email</label>
                             <input type="email" class="form-control" name="email">
                         </div>
-                        <div class="mb-4">
-                            <label for="password" class="form-label"> Password</label>
-                            <input type="password" class="form-control" name="email">
+                        <div class="mb-4">   
+                            <label for="telefono" class="form-label">Número de telefono</label>
+                            <input type="phone" class="form-control" name="phone">
                         </div>
-                        <div class="mb-4 form-check">
-                            <input type="checkbox" name="connected" class="form-check-input">
-                            <label for="connected" class="form-check-label">Mantenerme conectado</label>
+                        <div class="mb-4">
+                            <label for="consulta" class="form-label">Consulta</label>
+                            <textarea type="textarea" class="form-control" name="consulta"></textarea>
                         </div>
                         <div class="d-grid">
-                            <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
-                        </div>
-                        <div class="my-3 textologin">
-                            <span>No tienes cuenta? <a href="registro.html">Registrate!</a></span> <br>
-                            <span><a href="#">Recuperar password</a></span>
+                            <button type="submit" class="btn btn-primary">Enviar consulta</button>
                         </div>
                     </form>
                 </div>
