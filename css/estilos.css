@@ -59,6 +59,18 @@ footer a:hover{
 
 .navbar{
 	font-family: 'Montserrat', sans-serif;
+	font-weight: bold;
+	color: white;
+	
+}
+
+.navbar a:hover{
+	color: #fff;
+    text-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em blue;
+}
+
+.navbar button a:hover{
+	text-shadow: none;
 }
 
 #migadepan{
