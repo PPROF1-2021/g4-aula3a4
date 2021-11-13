@@ -37,6 +37,9 @@
                             <a class="nav-link" href="#">Quiénes somos?</a>
                         </li>
                         <li class="nav-item">
+							<a id="letranav" class="nav-link" href="calcularPartido.html">Calculador de días</a>
+						</li>  
+                        <li class="nav-item">
                             <a class="nav-link" href="#">FAQS</a>
                         </li>
                     </ul>
@@ -71,34 +74,46 @@
 
                     <h2 class="fw-bold text-center py-5">Registrarse</h2>
 
-                    <form action="#">
+                    <form action="#" class="needs-validation" name="fomularioRegistro" id="fomularioRegistro" method="get" novalidate>
                         <div class="mb-4">
                             <label for="nombre" class="form-label"> Nombre</label>
-                            <input type="text" class="form-control" name="email">
+                            <input type="text" class="form-control" name="nombre" id="nombre" required>
+                            <div class="invalid-feedback">*Dato obligatorio</div>
                         </div>
                         <div class="mb-4">
                             <label for="nombre" class="form-label"> Apellido</label>
-                            <input type="text" class="form-control" name="email">
+                            <input type="text" class="form-control" name="apellido" id="apellido" required>
+                            <div class="invalid-feedback">*Dato obligatorio</div>
                         </div>
                         <div class="mb-4">
                             <label for="email" class="form-label"> Dirección de email</label>
-                            <input type="email" class="form-control" name="email">
+                            <input type="email" class="form-control" name="email" id="email" required>
+                            <div class="invalid-feedback">*Dato obligatorio</div>
                         </div>
                         <div class="mb-4">
                             <label for="password" class="form-label"> Password</label>
-                            <input type="password" class="form-control" name="email">
+                            <input type="password" class="form-control" name="pass" id="pass" required>
+                            <div class="invalid-feedback">*Dato obligatorio</div>
                         </div>
                         <div class="mb-4">
                             <label for="password" class="form-label"> Repetir password</label>
-                            <input type="password" class="form-control" name="email">
+                            <input type="password" class="form-control" name="reppass" id="reppass" required>
+                            <div class="invalid-feedback">*Dato obligatorio</div>
                         </div>
-                        <div class="mb-4">
+                        <!--<div class="mb-4">
                             <label for="nacimiento" class="form-label"> Fecha de nacimiento</label>
-                            <input type="date" class="form-control" name="">
+                            <input type="date" class="form-control" name="fechanac" id="fechanac" required>
+                            <div class="invalid-feedback">*Dato obligatorio</div>
+                        </div>-->
+                        <div class="row">
+                            <div class="d-grid d-grid gap-2 col-md-6 col-sm-12 mt-sm-2">
+                                <button onclick="datosCargados()" type="submit" id="btnRegis" class="btn btn-primary">Registrarse</button>
+                            </div>
+                            <div class="d-grid d-grid gap-2 col-md-6 col-sm-12 mt-sm-2">
+                                <button type="reset" onReset="avisoReset()" class="btn btn-primary">Borrar datos</button>
+                            </div>
                         </div>
-                        <div class="d-grid">
-                            <button type="submit" class="btn btn-primary">Registrarse</button>
-                        </div>
+
                     </form>
                 </div>
             </div>
@@ -151,5 +166,12 @@
     
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
     <script src="js/bootstrap.min.js"></script>
+
+    <!-- Lamar script personalizados-->
+    <script src="funcionesGrupo04.js"></script>
+    <script src="funcionesGrupo04-2.js"></script>
+    
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 </body>
 </html>

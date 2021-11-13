@@ -37,6 +37,9 @@
                             <a class="nav-link" href="#">Quiénes somos?</a>
                         </li>
                         <li class="nav-item">
+							<a id="letranav" class="nav-link" href="calcularPartido.html">Calculador de días</a>
+						</li>  
+                        <li class="nav-item">
                             <a class="nav-link" href="#">FAQS</a>
                         </li>
                     </ul>
@@ -72,14 +75,16 @@
                 <div class="col bg-white p-5 rounded-end">
                     <h2 class="fw-bold text-center py-5">Iniciar Sesion</h2>
 
-                    <form action="#">
+                    <form action="#" class="needs-validation" novalidate>
                         <div class="mb-4">
                             <label for="email" class="form-label"> Direccion de email</label>
-                            <input type="email" class="form-control" name="email">
+                            <input type="email" class="form-control" name="email" required>
+                            <div class="invalid-feedback">*Dato obligatorio</div>
                         </div>
                         <div class="mb-4">
                             <label for="password" class="form-label"> Password</label>
-                            <input type="password" class="form-control" name="email">
+                            <input type="password" class="form-control" name="email" required>
+                            <div class="invalid-feedback">*Dato obligatorio</div>
                         </div>
                         <div class="mb-4 form-check">
                             <input type="checkbox" name="connected" class="form-check-input">
@@ -144,5 +149,9 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
     <script src="js/bootstrap.min.js"></script>
+
+    <!-- Lamar script personalizados-->
+    <script src="funcionesGrupo04.js"></script>
+    
 </body>
 </html>
