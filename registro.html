@@ -74,7 +74,7 @@
 
                     <h2 class="fw-bold text-center py-5">Registrarse</h2>
 
-                    <form action="#" class="needs-validation" name="fomularioRegistro" id="fomularioRegistro" method="get" novalidate>
+                    <form action="construccion.php" class="needs-validation" name="fomularioRegistro" id="fomularioRegistro" method="post" novalidate>
                         <div class="mb-4">
                             <label for="nombre" class="form-label"> Nombre</label>
                             <input type="text" class="form-control" name="nombre" id="nombre" required>
@@ -106,10 +106,10 @@
                             <div class="invalid-feedback">*Dato obligatorio</div>
                         </div>-->
                         <div class="row">
-                            <div class="d-grid d-grid gap-2 col-md-6 col-sm-12 mt-sm-2">
-                                <button onclick="datosCargados()" type="submit" id="btnRegis" class="btn btn-primary">Registrarse</button>
+                            <div class="d-grid d-grid gap-2 col-md-6 col-sm-12 mt-sm-2 mt-2">
+                                <button onclick="cargaExito()" id="btnRegis" class="btn btn-primary">Registrarse</button>
                             </div>
-                            <div class="d-grid d-grid gap-2 col-md-6 col-sm-12 mt-sm-2">
+                            <div class="d-grid d-grid gap-2 col-md-6 col-sm-12 mt-sm-2 mt-2">
                                 <button type="reset" onReset="avisoReset()" class="btn btn-primary">Borrar datos</button>
                             </div>
                         </div>
