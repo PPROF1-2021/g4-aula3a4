@@ -1,3 +1,9 @@
+<?php
+	$nombre = $_POST['nombre'];
+	$apellido = $_POST['apellido'];
+	$mail = $_POST['email'];		
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +19,7 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Work+Sans:wght@400;700&display=swap" rel="stylesheet"> 
 </head>
-<body>
+<body> 
 
 	<!-- BARRA DE NAVEGACION -->
 	<header>
@@ -56,7 +62,11 @@
     <div class="container">
         <div class="col-md-12 col-sm-12 mt-4 mb-4 rounded" id="sitioConsutruccion">
             <h1>SITIO EN CONSTRUCCIÓN</h1>
-            <p>Gracias por regitrarte, te avisaremos cuando todo este listo</p>
+			
+			<p><?php echo $nombre, ' '; echo $apellido, ' '; ?> gracias por registrarte</p>
+            <p>Tu usuario a partir de ahora será el mail registrado <?php echo $mail; ?> </p>
+			<p>En cuanto todo está listo te lo estaremos informando.</p>
+
             <a href="index.html" class="btn btn-warning" type="submit">Volver al inicio</a>
             <br><br>
             <img src="img/enconstruccion.jpg" alt="">
@@ -113,6 +123,11 @@
 		</div>
 	</footer>
 
+	<script>
+		alert('Datos enviados correctamente aguarda un momento te estamos redirigiendo');
+		setTimeout( function() { window.location.href = "index.html"; }, 8000 );
+	</script> 
+	<
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
 	<script src="js/bootstrap.min.js"></script>
 

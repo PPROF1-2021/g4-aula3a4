@@ -28,6 +28,14 @@ function calcularTiempoF(){
     //alert(fechaActual);
 } 
 
+function cargaExito(){
+    var comprobar = datosCargados();
+    /*if (comprobar == 0){
+        swal ('ÉXITO', 'Datos enviados correctamente, ' + nombre.value + ' ' + apellido.value +  ' aguarda un momento te estamos redirigiendo', 'success');
+        setTimeout( function() { window.location.href = "construccion.html"; }, 5000 );
+       }*/
+}
+
 //funcion de alerta para formulario enviado
 function datosCargados(){
     var nombre = document.getElementById("nombre"); 
@@ -53,10 +61,12 @@ function datosCargados(){
     swal ('WARNING', 'El nombre debe contener entre 2 y 20 caracteres', 'warning');
    }
 
-   if (pValidar == 0){
+   /*if (pValidar == 0){
     swal ('ÉXITO', 'Datos enviados correctamente, ' + nombre.value + ' ' + apellido.value +  ' aguarda un momento te estamos redirigiendo', 'success');
     setTimeout( function() { window.location.href = "construccion.html"; }, 5000 );
-   }
+   }*/
+
+   return pValidar;
     
 }
 
