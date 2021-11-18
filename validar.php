@@ -1,20 +1,26 @@
 <?php
-$direccion_de_email=$POST['direccion de emai'];
-$password=$POST['password'];
+
+session_start();
+
+include('conexion.php');
+
+$email=$_POST['email'];
+$pass=$_POST['pass'];
 
 //conectar a la base de datos
-$conexion=mysqli_connect("localhost", "root", "", "database_fmt");
-$consulta="SELECT * FROM usuario WHERE usuario='$email' and password='$password'";
+/*$conexion=mysqli_connect("localhost", "root", "", "database_fmt");*/
+$consulta="SELECT * FROM registro WHERE direccion_de_email='$email' and password='$pass'";
 $resultado=mysqli_query($conexion, $consulta);
 
 $filas= mysqli_num_rows($resultado);
 if($filas>0) {
-    header("location:index.html");
+    echo "<SCRIPT>window.location='construccion.php?email=$email';</SCRIPT>";
 }
 else {
-    echo "Error en la autentificación";
+    echo utf8_decode('<script>alert("Usuario o contraseña incorrectos, en caso de no estar registrado hágalo para poder ingresar")</script> ');		
+	echo "<script>location.href='login.html'</script>";
 }
-mysqli_free_result($resultado);
-mysqli_close($conexion);
+//mysqli_free_result($resultado);
+//mysqli_close($conexion);
 
 ?>

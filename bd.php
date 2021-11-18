@@ -1,21 +1,6 @@
 <?php
 
-    //conectar a la base de datos
-    $conexion= mysqli_connect('localhost','root','');
-    mysqli_set_charset ($conexion, "utf8");
-
-    //verificar la conexion
-    if(!$conexion){
-        echo "No Se Pudo Conectar Con El Servidor";
-    }else{
-
-        $base= mysqli_select_db ($conexion, 'db_findmyteam');
-        if(!$base){
-           echo"No Se Encontro La Base De Datos";
-        }
-    }
-
-    /*include('conexion.php');*/
+    include('conexion.php');
 
     //recuperar las variables
     $nombre=$_POST['nombre'];
@@ -24,16 +9,18 @@
     $password=$_POST['pass'];
     $repetir_password=$_POST['reppass'];
     //hacer la sentencia de sql
-    $sql="INSERT INTO registro ('nombre','apellido','direccion_de_email','password','repetir_password')
+    $sql="INSERT INTO registro (nombre, apellido, direccion_de_email, password, repetir_password)
                         values ('$nombre','$apellido','$direccion_de_email','$password','$repetir_password')";
                                           
     //ejecutar la sentencia de sql
     $ejecutar=mysqli_query($conexion, $sql);
     //verificar de la ejecucion
     if (!$ejecutar){
-        echo"Hubo Algun Error";
+        echo utf8_decode('<script>alert("Hubo algun error en el registro, intente nuevamente")</script> ');		
+        echo "<script>location.href='registro.html'</script>";
     }else{
-        echo"Datos cargados con exito";
+        echo utf8_decode('<script>alert("Datos cargados exitosamente")</script> ');		
+        echo "<script>location.href='login.html'</script>";
     }
 ?>
 
