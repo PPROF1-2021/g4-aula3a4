@@ -1,7 +1,19 @@
 <?php
-	$nombre = $_POST['nombre'];
-	$apellido = $_POST['apellido'];
-	$mail = $_POST['email'];		
+
+	extract($_GET);
+	include('conexion.php');	
+	$mail = $_GET['email'];	
+
+	$usuario = "SELECT * FROM registro WHERE direccion_de_email = '$mail'";
+	$resultado = mysqli_query($conexion, $usuario);
+	$row=mysqli_fetch_assoc($resultado);
+	
+	$nombre = $row["nombre"];
+	$apellido = $row["apellido"];
+	//$mail = $row["direccion_de_email"];
+	/*$nombre = $_POST['nombre'];
+	$apellido = $_POST['apellido'];*/
+		
 ?>
 
 <!DOCTYPE html>
@@ -65,7 +77,7 @@
 			
 			<p><?php echo $nombre, ' '; echo $apellido, ' '; ?> gracias por registrarte</p>
             <p>Tu usuario a partir de ahora será el mail registrado <?php echo $mail; ?> </p>
-			<p>En cuanto todo está listo te lo estaremos informando.</p>
+			<p>En cuanto todo esté listo te lo estaremos informando.</p>
 
             <a href="index.html" class="btn btn-warning" type="submit">Volver al inicio</a>
             <br><br>
@@ -124,7 +136,7 @@
 	</footer>
 
 	<script>
-		alert('Datos enviados correctamente aguarda un momento te estamos redirigiendo');
+		alert('Bienvenido a Find my Team, aguarda un momento te estamos redirigiendo');
 		setTimeout( function() { window.location.href = "index.html"; }, 8000 );
 	</script> 
 	<

@@ -1,35 +1,30 @@
 <?php
-    //conectar a la base de datos
-    $conexion=@msqli_connect('localhost',"root','','database_fmt');
-    //verificar la conexion
-    if(!$conectar){
-        echo"No Se Pudo Conectar Con El Servidor";
-    }else{
 
-        $base=mysql_select_db('database_fmt');
-        if(!base){
-           echo"No Se Encontro La Base De Datos";
-        }
-    }
+    include('conexion.php');
+
     //recuperar las variables
-    $nombre=$POST['nombre'];
-    $apellido=$POST['apellido'];
-    $direccion_de_email=$POST['direccion de mail'];
-    $password=$POST['password']
-    $repetir_password=$POST['repetir password']
+    $nombre=$_POST['nombre'];
+    $apellido=$_POST['apellido'];
+    $direccion_de_email=$_POST['email'];
+    $password=$_POST['pass'];
+    $reppassword=$_POST['reppass'];
+    $telefono= 'pendiente';
+    $fecha_nac= '0000-00-00';
+    $ubicacion='0';
+    $genero='0';
     //hacer la sentencia de sql
-    $sql="INSERT INTO datos VALUES('$nombre',
-                                   '$apellido',
-                                   '$direccion_de_mail',
-                                   '$password',
-                                   '$repetir_password')";
+    $sql="INSERT INTO registro (nombre, apellido, telefono, fecha_de_nacimiento, direccion_de_email, idUbicacion_usuario, idGenero, password, repetir_password )
+                        values ('$nombre','$apellido','$telefono','$fecha_nac','$direccion_de_email','$ubicacion','$genero','$password', '$reppassword')";
+                                          
     //ejecutar la sentencia de sql
-    $ejecutar=mysql_query($sql);
+    $ejecutar=mysqli_query($conexion, $sql);
     //verificar de la ejecucion
     if (!$ejecutar){
-        echo"Hubo Algun Error";
+        echo utf8_decode('<script>alert("Hubo algun error en el registro, intente nuevamente")</script> ');		
+        echo "<script>location.href='registro.html'</script>";
     }else{
-        echo"Datos Guardados Correctamente<br><a href'index.html'>Volver</a>";
+        echo utf8_decode('<script>alert("Datos cargados exitosamente")</script> ');		
+        echo "<script>location.href='login.html'</script>";
     }
 ?>
 
