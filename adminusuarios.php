@@ -66,6 +66,8 @@ $usuarios = "SELECT * FROM registro"
                 <tr>
                 <th scope="col">Nombre</th>
                 <th scope="col">Apellido</th>
+				<th scope="col">Telefono</th>
+				<th scope="col">Fecha de nacimiento</th>
                 <th scope="col">Mail</th>
                 <th scope="col">Pass</th>
                 <th scope="col">Eliminar</th>
@@ -78,6 +80,8 @@ $usuarios = "SELECT * FROM registro"
                 <tr>
                 <td><?php echo $row["nombre"]; ?></td>
                 <td><?php echo $row["apellido"]; ?></td>
+				<td><?php echo $row["telefono"]; ?></td>
+				<td><?php echo $row["fecha_de_nacimiento"]; ?></td>
                 <td><?php echo $row["direccion_de_email"]; ?></td>
                 <td><?php echo $row["password"]; ?></td>
                 <td><?php echo "<a href='eliminar.php?no=".$row['idRegistro']."'> <img src='img/btnborrar.png'></a>" ?></td>

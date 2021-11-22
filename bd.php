@@ -7,10 +7,14 @@
     $apellido=$_POST['apellido'];
     $direccion_de_email=$_POST['email'];
     $password=$_POST['pass'];
-    $repetir_password=$_POST['reppass'];
+    $reppassword=$_POST['reppass'];
+    $telefono= 'pendiente';
+    $fecha_nac= '0000-00-00';
+    $ubicacion='0';
+    $genero='0';
     //hacer la sentencia de sql
-    $sql="INSERT INTO registro (nombre, apellido, direccion_de_email, password, repetir_password)
-                        values ('$nombre','$apellido','$direccion_de_email','$password','$repetir_password')";
+    $sql="INSERT INTO registro (nombre, apellido, telefono, fecha_de_nacimiento, direccion_de_email, idUbicacion_usuario, idGenero, password, repetir_password )
+                        values ('$nombre','$apellido','$telefono','$fecha_nac','$direccion_de_email','$ubicacion','$genero','$password', '$reppassword')";
                                           
     //ejecutar la sentencia de sql
     $ejecutar=mysqli_query($conexion, $sql);

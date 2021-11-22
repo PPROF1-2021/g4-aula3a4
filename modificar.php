@@ -12,6 +12,8 @@ function ConsultarUsuario($no_usr){
     return[
         $row['nombre'],
         $row['apellido'],
+		$row['telefono'],
+		$row['fecha_de_nacimiento'],
         $row['direccion_de_email'],
         $row['password']
     ];
@@ -92,13 +94,21 @@ function ConsultarUsuario($no_usr){
                                 <label for="apellido" class="form-label"> Apellido</label>
                                 <input type="apellido" class="form-control" name="apellido" value="<?php echo $consulta[1]?>">
                             </div>
+							<div class="mb-4">
+                                <label for="telefono" class="form-label"> Telefono</label>
+                                <input type="text" class="form-control" name="telefono" value="<?php echo $consulta[2]?>">
+                            </div>
+							<div class="mb-4">
+                                <label for="telefono" class="form-label"> Fecha de nacimiento</label>
+                                <input type="date" class="form-control" name="fecha_nac" value="<?php echo $consulta[3]?>">
+                            </div>
                             <div class="mb-4">
                                 <label for="email" class="form-label"> Direccion de email</label>
-                                <input type="email" class="form-control" name="email" value="<?php echo $consulta[2]?>">
+                                <input type="email" class="form-control" name="email" value="<?php echo $consulta[4]?>">
                             </div>
                             <div class="mb-4">
                                 <label for="pass" class="form-label"> Password</label>
-                                <input type="pass" class="form-control" name="pass" value="<?php echo $consulta[3]?>">
+                                <input type="pass" class="form-control" name="pass" value="<?php echo $consulta[5]?>">
                             </div>                            
                             <div class="d-grid">
                                 <button type="submit" class="btn btn-primary">Confirmar cambio</button>
