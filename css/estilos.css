@@ -18,6 +18,11 @@ body{
 	background-image: url(../img/f1.jpeg);
 }
 
+.bg_admin{
+	background-image: url(../img/adminimg.jpeg);
+	background-size: cover;
+}
+
 .textologin{
 	text-align: center;
 }
@@ -192,5 +197,9 @@ footer a:hover{
 	border-radius: 20px;
 	box-shadow: 10px 5px 5px black;
 	border: 1px solid #000;
+}
+
+#tabla_admin{
+	text-align: center;
 }
 
