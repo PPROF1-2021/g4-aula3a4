@@ -1,3 +1,28 @@
+<?php
+
+include('conexion.php');
+
+$consulta= ConsultarUsuario($_GET['no']);
+
+function ConsultarUsuario($no_usr){
+    include('conexion.php');
+    $sentencia="SELECT * FROM registro WHERE idRegistro = '".$no_usr."' ";
+    $resultado=mysqli_query($conexion, $sentencia);
+    $row=mysqli_fetch_assoc($resultado);
+    return[
+        $row['nombre'],
+        $row['apellido'],
+		$row['telefono'],
+		$row['fecha_de_nacimiento'],
+        $row['direccion_de_email'],
+        $row['password']
+    ];
+    
+
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -50,46 +75,50 @@
 	</header>
 
 	<!-- FIN DE LA BARRA DE NAVEGACION-->
+    <br><br>
 
-	<br><br>
+    <section>  
 
-	<div class="container p-4 pt-0">
-		<div class="row w-80 col-md-12">
-			<div class="d-grid gap-2 col-md-6 col-sm-12 mt-2">
-  				<button class="btn btn-warning botoninicio" type="button">Encuentra a tu equipo</button>
-			</div>
-			<div class="d-grid gap-2 col-md-6 col-sm-12 mt-2">			   
-			    <button class="btn btn-warning botoninicio" type="button">Arma tu equipo</button>
-			</div>
-		</div>
-	</div>
+        <div class="container w-75 bg-primary mt-5 rounded shadow">
+            <div class="row aling-items-stretch">               
+                <div class="col bg-white p-5 rounded-end">
+                        <h2 class="fw-bold text-center py-5">Modificar Usuario</h2>
 
-	<!--SILDER-->
-	<div class="container">
-	<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-	  <div class="carousel-inner">
-	    <div class="carousel-item active">
-	      <img src="img/slide/slide1.jpg" class="d-block w-100" alt="...">
-	    </div>
-	    <div class="carousel-item">
-	      <img src="img/slide/slide2.jpg" class="d-block w-100" alt="...">
-	    </div>
-	    <div class="carousel-item">
-	      <img src="img/slide/slide3.jpg" class="d-block w-100" alt="...">
-	    </div>
-	  </div>
-	  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-	    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-	    <span class="visually-hidden">Previous</span>
-	  </button>
-	  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-	    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-	    <span class="visually-hidden">Next</span>
-	  </button>
-	</div>
-	</div>
-	<!-- FIN DEL SLIDER -->
+                        <form action="modificar2.php" class="needs-validation" method="POST">
+                            <input type="hidden" name="idRegistro" value="<?php echo $_GET['no'] ?>">
+                            <div class="mb-4">
+                                <label for="nombre" class="form-label"> Nombre</label>
+                                <input type="nombre" class="form-control" name="nombre" value="<?php echo $consulta[0]?>">
+                            </div>
+                            <div class="mb-4">
+                                <label for="apellido" class="form-label"> Apellido</label>
+                                <input type="apellido" class="form-control" name="apellido" value="<?php echo $consulta[1]?>">
+                            </div>
+							<div class="mb-4">
+                                <label for="telefono" class="form-label"> Telefono</label>
+                                <input type="text" class="form-control" name="telefono" value="<?php echo $consulta[2]?>">
+                            </div>
+							<div class="mb-4">
+                                <label for="telefono" class="form-label"> Fecha de nacimiento</label>
+                                <input type="date" class="form-control" name="fecha_nac" value="<?php echo $consulta[3]?>">
+                            </div>
+                            <div class="mb-4">
+                                <label for="email" class="form-label"> Direccion de email</label>
+                                <input type="email" class="form-control" name="email" value="<?php echo $consulta[4]?>">
+                            </div>
+                            <div class="mb-4">
+                                <label for="pass" class="form-label"> Password</label>
+                                <input type="pass" class="form-control" name="pass" value="<?php echo $consulta[5]?>">
+                            </div>                            
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary">Confirmar cambio</button>
+                            </div>
+                        </form>
+                </div>
+            </div>
+        </div>
 
+    </section>
 	<footer>
 		<div class="container-fluid w-100 bg-dark p-5 mt-5 pb-0">
 			<div class="row">
@@ -133,7 +162,7 @@
 				</div>					
 			    </div> 
 
-			<div class="row"><div class="container-fluid w-100 bg-dark text-center"><hr><p>Copyright 2021 All rights reserved </p><a href="loginadmin.html">Admin</a></div></div>
+			<div class="row"><div class="container-fluid w-100 bg-dark text-center"><hr><p>Copyright 2021 All rights reserved </p></div></div>
 		</div>
 	</footer>
 
@@ -142,4 +171,3 @@
 
 </body>
 </html>
-

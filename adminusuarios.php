@@ -1,3 +1,11 @@
+<?php
+
+include('conexion.php');
+
+$usuarios = "SELECT * FROM registro"
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -50,45 +58,41 @@
 	</header>
 
 	<!-- FIN DE LA BARRA DE NAVEGACION-->
+    <br><br>
 
-	<br><br>
-
-	<div class="container p-4 pt-0">
-		<div class="row w-80 col-md-12">
-			<div class="d-grid gap-2 col-md-6 col-sm-12 mt-2">
-  				<button class="btn btn-warning botoninicio" type="button">Encuentra a tu equipo</button>
-			</div>
-			<div class="d-grid gap-2 col-md-6 col-sm-12 mt-2">			   
-			    <button class="btn btn-warning botoninicio" type="button">Arma tu equipo</button>
-			</div>
-		</div>
-	</div>
-
-	<!--SILDER-->
 	<div class="container">
-	<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-	  <div class="carousel-inner">
-	    <div class="carousel-item active">
-	      <img src="img/slide/slide1.jpg" class="d-block w-100" alt="...">
-	    </div>
-	    <div class="carousel-item">
-	      <img src="img/slide/slide2.jpg" class="d-block w-100" alt="...">
-	    </div>
-	    <div class="carousel-item">
-	      <img src="img/slide/slide3.jpg" class="d-block w-100" alt="...">
-	    </div>
-	  </div>
-	  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-	    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-	    <span class="visually-hidden">Previous</span>
-	  </button>
-	  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-	    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-	    <span class="visually-hidden">Next</span>
-	  </button>
-	</div>
-	</div>
-	<!-- FIN DEL SLIDER -->
+        <table class="table table-dark table-striped table-hover" id="tabla_admin">
+            <thead>
+                <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+				<th scope="col">Telefono</th>
+				<th scope="col">Fecha de nacimiento</th>
+                <th scope="col">Mail</th>
+                <th scope="col">Pass</th>
+                <th scope="col">Eliminar</th>
+                <th scope="col">Modificar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php $resultado = mysqli_query($conexion, $usuarios);
+                while($row=mysqli_fetch_assoc($resultado)) { ?>
+                <tr>
+                <td><?php echo $row["nombre"]; ?></td>
+                <td><?php echo $row["apellido"]; ?></td>
+				<td><?php echo $row["telefono"]; ?></td>
+				<td><?php echo $row["fecha_de_nacimiento"]; ?></td>
+                <td><?php echo $row["direccion_de_email"]; ?></td>
+                <td><?php echo $row["password"]; ?></td>
+                <td><?php echo "<a href='eliminar.php?no=".$row['idRegistro']."'> <img src='img/btnborrar.png'></a>" ?></td>
+                <td><?php echo "<a href='modificar.php?no=".$row['idRegistro']."'> <img src='img/btnmodificar.png'></a>" ?></td>
+                </tr>
+
+                <?php } ?>
+            </tbody>
+        </table>
+
+    </div>
 
 	<footer>
 		<div class="container-fluid w-100 bg-dark p-5 mt-5 pb-0">
@@ -133,7 +137,7 @@
 				</div>					
 			    </div> 
 
-			<div class="row"><div class="container-fluid w-100 bg-dark text-center"><hr><p>Copyright 2021 All rights reserved </p><a href="loginadmin.html">Admin</a></div></div>
+			<div class="row"><div class="container-fluid w-100 bg-dark text-center"><hr><p>Copyright 2021 All rights reserved </p></div></div>
 		</div>
 	</footer>
 
@@ -142,4 +146,3 @@
 
 </body>
 </html>
-

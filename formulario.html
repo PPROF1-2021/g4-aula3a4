@@ -65,43 +65,45 @@
 
     <!--Formulario de inicio de contacto-->
     <section>
-        <div class="container w-75 bg-trasparent mt-5 mb-5 rounded">
-            <div class="row aling-items-stretch">
-                <div class="col d-none d-lg-block col-lg-2 col-md-1 "></div>
-                <div class="col bg-white p-5 rounded col-lg-8 col-xs-12 shadow">
+        <div action="bd.php" method="post">
+            <div class="container w-75 bg-trasparent mt-5 mb-5 rounded">
+                <div class="row aling-items-stretch">
+                    <div class="col d-none d-lg-block col-lg-2 col-md-1 "></div>
+                    <div class="col bg-white p-5 rounded col-lg-8 col-xs-12 shadow">
 
-                    <h2 class="fw-bold text-center py-5">Contactate con nosotros</h2>
+                        <h2 class="fw-bold text-center py-5">Contactate con nosotros</h2>
 
-                    <form action="#" class="needs-validation" novalidate>  
-                        <div class="mb-4">
-                            <label for="nombre" class="form-label"> Nombre</label>
-                            <input type="text" class="form-control" name="email" required>
-                            <div class="invalid-feedback">*Dato obligatorio</div>
-                        </div> 
-                        <div class="mb-4">
-                            <label for="nombre" class="form-label"> Apellido</label>
-                            <input type="text" class="form-control" name="email" required>
-                            <div class="invalid-feedback">*Dato obligatorio</div>
-                        </div> 
-                        <div class="mb-4">
-                            <label for="email" class="form-label"> Dirección de email</label>
-                            <input type="email" class="form-control" name="email" required>
-                            <div class="invalid-feedback">*Dato obligatorio</div>
-                        </div>
-                        <div class="mb-4">   
-                            <label for="telefono" class="form-label">Número de telefono</label>
-                            <input type="phone" class="form-control" name="phone" required>
-                            <div class="invalid-feedback">*Dato obligatorio</div>
-                        </div>
-                        <div class="mb-4">
-                            <label for="consulta" class="form-label">Consulta</label>
-                            <textarea type="textarea" class="form-control" name="consulta" required></textarea>
-                            <div class="invalid-feedback">*Por favor ingrese su consulta</div>
-                        </div>
-                        <div class="d-grid">
-                            <button type="submit" class="btn btn-primary">Enviar consulta</button>
-                        </div>
-                    </form>
+                        <form action="#" class="needs-validation" novalidate>  
+                            <div class="mb-4">
+                                <label for="nombre" class="form-label"> Nombre</label>
+                                <input type="text" class="form-control" name="email" required>
+                                <div class="invalid-feedback">*Dato obligatorio</div>
+                            </div> 
+                            <div class="mb-4">
+                                <label for="nombre" class="form-label"> Apellido</label>
+                                <input type="text" class="form-control" name="email" required>
+                                <div class="invalid-feedback">*Dato obligatorio</div>
+                            </div> 
+                            <div class="mb-4">
+                                <label for="email" class="form-label"> Dirección de email</label>
+                                <input type="email" class="form-control" name="email" required>
+                                <div class="invalid-feedback">*Dato obligatorio</div>
+                            </div>
+                            <div class="mb-4">   
+                                <label for="telefono" class="form-label">Número de telefono</label>
+                                <input type="phone" class="form-control" name="phone" required>
+                                <div class="invalid-feedback">*Dato obligatorio</div>
+                            </div>
+                                <div class="mb-4">
+                                <label for="consulta" class="form-label">Consulta</label>
+                                <textarea type="textarea" class="form-control" name="consulta" required></textarea>
+                                <div class="invalid-feedback">*Por favor ingrese su consulta</div>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary">Enviar consulta</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
